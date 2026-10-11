@@ -260,3 +260,5 @@ p { margin: 0 0 1em; }
   * { transition: none !important; }
 }
 .brand-invert img { background: #fff; border-radius: 6px; padding: 3px 5px; width: 60px; }
+.footer-base { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px; }
+.footer-origin { color: #fff; font-weight: 500; }
