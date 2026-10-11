@@ -11,7 +11,7 @@
       {{- range site.Menus.main }}
       <a href="{{ .URL | relURL }}"{{ if eq .URL $current }} aria-current="page"{{ end }}>{{ .Name }}</a>
       {{- end }}
-      <a class="btn btn-small" href="{{ "contact/" | relURL }}">Book a call</a>
+      <a class="btn btn-small" href="{{ "contact/#book" | relURL }}">Book a call</a>
     </nav>
   </div>
 </header>

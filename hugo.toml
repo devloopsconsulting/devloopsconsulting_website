@@ -15,6 +15,9 @@ disableKinds = ["taxonomy", "term", "RSS"]
   linkedin = "https://www.linkedin.com/in/ashwinmurali/"
   x = "https://x.com/cruisemaniac"
   formspree = "https://formspree.io/f/xkgbgypy"
+  # Google Calendar booking page link (Calendar > booking page > Share > Copy link).
+  # Leave empty to hide the scheduler on the Contact page.
+  bookingURL = ""
   ogImage = "img/devloops-mark.png"
 
 [markup]

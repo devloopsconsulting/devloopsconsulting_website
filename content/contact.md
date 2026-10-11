@@ -1,13 +1,14 @@
 ---
 title: "Contact"
 heading: "Book a free 30-minute call"
-lede: "Tell me what you are working on and where it hurts. I reply within one business day."
+lede: "Pick a time that suits you, or send a short message about what you are working on. I reply within one business day."
 description: "Contact DevLoops Consulting for DevOps, cloud, and robotics infrastructure work."
 raw: true
 hideCta: true
 ---
 
 <div class="wrap">
+  {{< booking >}}
   <div class="contact-grid">
     <div class="contact-info">
       <p>The first call is free and has no obligation. At the end of it, you will know if I can help and what the next step is.</p>

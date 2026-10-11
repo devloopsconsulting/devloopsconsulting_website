@@ -1,0 +1,15 @@
+{{- with site.Params.bookingURL -}}
+{{- $src := . -}}
+{{- if not (strings.Contains $src "gv=true") -}}
+  {{- $src = printf "%s%sgv=true" $src (cond (strings.Contains $src "?") "&" "?") -}}
+{{- end -}}
+<section class="booking" id="book" aria-labelledby="book-h">
+  <h2 id="book-h">Pick a time</h2>
+  <p class="booking-note">Times show in your time zone. You get a calendar invite with a Google Meet link.</p>
+  <div class="booking-frame">
+    <iframe src="{{ $src }}" title="Book a 30-minute call with DevLoops Consulting" loading="lazy"></iframe>
+  </div>
+  <p class="booking-alt">Calendar not loading? <a href="{{ . }}" rel="noopener" target="_blank">Open the booking page</a>.</p>
+</section>
+<h2 class="contact-h">Prefer to write?</h2>
+{{- end -}}
