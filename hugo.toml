@@ -9,7 +9,7 @@ disableKinds = ["taxonomy", "term", "RSS"]
 # The site uses its own templates in /layouts. The old "tella" theme is no longer used.
 
 [params]
-  description = "DevOps and cloud infrastructure consulting for robotics, autonomy, and software teams. Founder-led, based in Abu Dhabi, working worldwide."
+  description = "DevOps and cloud infrastructure consulting for robotics, autonomy, and software teams. Senior-led, based in Abu Dhabi, working worldwide."
   email = "contact@devloopsconsulting.com"
   location = "Abu Dhabi, UAE"
   linkedin = "https://www.linkedin.com/in/ashwinmurali/"

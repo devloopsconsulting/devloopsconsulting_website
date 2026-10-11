@@ -1,7 +1,7 @@
 ---
 title: "About"
 heading: "Built on 20 years of running production infrastructure"
-lede: "DevLoops Consulting is the practice of Ashwin Thanalapati, a cloud architect and engineering leader based in Abu Dhabi."
+lede: "Ashwin Thanalapati is the principal consultant at DevLoops Consulting. He is a cloud architect and engineering leader based in Abu Dhabi."
 description: "Ashwin Thanalapati: 20+ years in DevOps and cloud architecture, robotics infrastructure at TII, MSc Robotics, founder of Orthos Robotics."
 raw: true
 ---
@@ -12,7 +12,7 @@ raw: true
       <p>I started in mobile firmware and build engineering. Over the next two decades I moved through release management, DevOps, and engineering leadership at product companies in India and the UAE.</p>
       <p>Today my work sits where cloud meets the physical world. I am Lead Cloud Architect for an autonomous-vehicle orchestration platform that is in pilot in the UAE. Before that, I built resilient infrastructure for autonomous robotics, drone swarms, and AI model deployment at Technology Innovation Institute in Abu Dhabi.</p>
       <p>I hold an MSc in Robotics from Middlesex University London, and I build ROS 2 robots myself. I am also the founder of <a href="https://orthosrobotics.com" rel="noopener">Orthos Robotics</a>, which turns ROS 2 telemetry into OpenTelemetry traces for mission verification.</p>
-      <p>I started DevLoops to give teams direct access to that experience. You work with me, not with a sales team or a bench of juniors. I scope the work, I do the work, and I make sure your team can own it after I leave.</p>
+      <p>At DevLoops, you get direct access to that experience. You work with me, not with a sales team or a bench of juniors. I scope the work, I do the work, and I make sure your team can own it after I leave.</p>
     </div>
     <aside class="about-side">
       <h2>Focus areas</h2>
