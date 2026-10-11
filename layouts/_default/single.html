@@ -1,0 +1,21 @@
+{{ define "main" }}
+<section class="page-head">
+  <div class="wrap">
+    <h1>{{ .Params.heading | default .Title }}</h1>
+    {{ with .Params.lede }}<p class="lede">{{ . }}</p>{{ end }}
+  </div>
+</section>
+<div class="page-body">
+  {{ if .Params.raw }}
+    {{ .Content }}
+  {{ else }}
+  <div class="wrap">
+    <article class="prose">
+      {{ if eq .Section "blog" }}<p class="post-date">{{ .Date.Format "2 January 2006" }}</p>{{ end }}
+      {{ .Content }}
+    </article>
+  </div>
+  {{ end }}
+</div>
+{{ if not .Params.hideCta }}{{ partial "cta.html" . }}{{ end }}
+{{ end }}

@@ -1,43 +1,21 @@
 baseURL = "https://devloopsconsulting.com"
 title = "DevLoops Consulting"
-author = "DevLoops Consulting"
+author = "Ashwin Thanalapati"
 languageCode = "en"
 DefaultContentLanguage = "en"
 enableInlineShortcodes = true
-theme = "tella"
 enableRobotsTXT = true
-
-# Please enable this feature if the site is available in Japanese, Chinese or Korean.
-#hasCJKLanguage = true
-
-# If you're using Google Analytics, you can enable this feature.
-#googleAnalytics = "UA-12345678-1"
-
-# Disqus Comment System
-#disqusShortname = ""
+disableKinds = ["taxonomy", "term", "RSS"]
+# The site uses its own templates in /layouts. The old "tella" theme is no longer used.
 
 [params]
-  showBlog = false
-  mainSections = ['blog']
-  googleFonts = true
-  [params.logo]
-    main = "img/devloops-logo-transparent.png"
-    alt = "DevLoops Logo"
-    size = "h-14"
-  [params.site]
-    name = "DevLoops Consulting"
-  [params.icon]
-    fontawesome = true
-  [params.homepage_meta_tags]
-    meta_description = "DevLoops Consulting helps businesses streamline software delivery with DevOps, Kubernetes, and cloud-native infrastructure. We deliver automation, scalability, and 24/7 support."
-    meta_og_title = "DevOps Consulting | Kubernetes & Cloud Experts - DevLoops Consulting"
-    meta_og_type = "organization"
-    meta_og_url = "https://devloopsconsulting.com"
-    meta_og_image = "https://devloopsconsulting.com/favicon-32x32.png"
-    meta_og_description = "DevOps and cloud-native consulting company focused on automation, Kubernetes, and infrastructure modernization."
-    #meta_twitter_card = "summary_large_image"
-    #meta_twitter_site = "@username"
-    #meta_twitter_creator = "@username"
+  description = "DevOps and cloud infrastructure consulting for robotics, autonomy, and software teams. Founder-led, based in Abu Dhabi, working worldwide."
+  email = "contact@devloopsconsulting.com"
+  location = "Abu Dhabi, UAE"
+  linkedin = "https://www.linkedin.com/in/ashwinmurali/"
+  x = "https://x.com/cruisemaniac"
+  formspree = "https://formspree.io/f/xkgbgypy"
+  ogImage = "img/devloops-mark.png"
 
 [markup]
   [markup.goldmark]
@@ -45,7 +23,6 @@ enableRobotsTXT = true
       unsafe = true
 
 [menu]
-
   [[menu.main]]
     identifier = "services"
     name = "Services"
@@ -53,9 +30,9 @@ enableRobotsTXT = true
     weight = 1
 
   [[menu.main]]
-    identifier = "blog"
-    name = "Blog"
-    url = "/blog/"
+    identifier = "robotics"
+    name = "Robotics"
+    url = "/services/#robotics"
     weight = 2
 
   [[menu.main]]
@@ -64,20 +41,9 @@ enableRobotsTXT = true
     url = "/about/"
     weight = 3
 
-  [[menu.main]]
-    identifier = "contact"
-    name = "Contact"
-    url = "/contact/"
-    weight = 4
-
-  # Footer Menu
-#  [[menu.footer]]
-#    name = "Home"
-#    url = "/"
-#      weight = 1
-
-#  [[menu.footer]]
-#    name = "Github"
-#    url = "https://github.com/devloopsconsulting"
-#    pre = "<i class='icon-github text-2xl'></i>"
-#      weight = 2
+  # Add the blog back to the menu when real posts exist:
+  # [[menu.main]]
+  #   identifier = "blog"
+  #   name = "Blog"
+  #   url = "/blog/"
+  #   weight = 4

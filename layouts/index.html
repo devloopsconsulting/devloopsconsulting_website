@@ -1,52 +1,141 @@
-<!DOCTYPE html>
-<html lang="{{ or .Site.Language.Lang "ja" }}">
-
-<head>
-    {{- partial "head.html" . -}}
-    <meta name="description" content="{{ .Site.Params.homepage_meta_tags.meta_og_description }}" />
-    <meta property="og:title" content="{{ .Site.Params.homepage_meta_tags.meta_og_title }}" />
-    <meta property="og:type" content="{{ .Site.Params.homepage_meta_tags.meta_og_type }}" />
-    <meta property="og:url" content="{{ .Site.Params.homepage_meta_tags.meta_og_url }}" />
-    <meta property="og:image" content="{{ .Site.Params.homepage_meta_tags.meta_og_image }}" />
-    <meta property="og:description" content="{{ .Site.Params.homepage_meta_tags.meta_og_description }}" />
-    <meta name="twitter:card" content="{{ .Site.Params.homepage_meta_tags.meta_twitter_card }}" />
-    <meta name="twitter:site" content="{{ .Site.Params.homepage_meta_tags.meta_twitter_site }}" />
-    <meta name="twitter:creator" content="{{ .Site.Params.homepage_meta_tags.meta_twitter_creator }}" />
-</head>
-
-<body>
-    {{- partial "alert.html" . -}}
-    {{- partial "header.html" . -}}
-    <div class="scroll-top rounded-full">
-        <span class="icon-keyboard_arrow_up text-2xl"></span>
+{{ define "main" }}
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <h1>Infrastructure that holds up, from the cloud to the robot.</h1>
+      <p class="lede">DevLoops is a founder-led DevOps and cloud consultancy. I help robotics, autonomy, and software teams ship faster, run reliably, and spend less on cloud.</p>
+      <div class="hero-actions">
+        <a class="btn btn-accent" href="{{ "contact/" | relURL }}">Book a free 30-minute call</a>
+        <a class="btn btn-ghost" href="{{ "services/" | relURL }}">See services</a>
+      </div>
     </div>
-    {{- partial "slide.html" . -}}
-    {{- partial "strip.html" . -}}
-    {{ if ne .Site.Params.showBlog false }}
-    <div class="mx-auto my-10 max-w-6xl">
-        <h2 class="text-4xl ml-2">Blog</h2>
-        {{- partial "recent.html" . -}}
-    </div>
-    {{ end }}
-    {{- partial "footer.html" . -}}
-    <script src="{{ "/js/swiper-bundle.min.js" | relURL }}"></script>
-    <script>
-        var mySwiper = new Swiper(".swiper-container", {
-            direction: "horizontal",
-            loop: true,
-            speed: 550,
-            autoplay: {
-                delay: 6000,
-            },
-            pagination: {
-                el: ".swiper-pagination",
-            },
-            navigation: {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
-            },
-        });
-    </script>
-</body>
+    <figure class="hero-loop" aria-label="The delivery loop: build and test, release, deploy to fleet, run on robot, telemetry back, analyse.">
+      {{ partial "loop.html" . }}
+    </figure>
+  </div>
+</section>
 
-</html>
+<section class="proof">
+  <div class="wrap">
+    <p class="proof-lead">20+ years building and running production infrastructure, at</p>
+    <ul class="proof-list">
+      <li>Technology Innovation Institute</li>
+      <li>Zoomcar</li>
+      <li>Freshdesk</li>
+      <li>CoLearn</li>
+      <li>Fybr</li>
+      <li>Verloop</li>
+      <li>Accenture</li>
+      <li>Infosys</li>
+    </ul>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Two practices. One engineering standard.</h2>
+      <p>Most consultants know the cloud or know robots. Robotics teams need both, because the robot and the backend fail together.</p>
+    </div>
+    <div class="practices">
+      <article class="practice practice-robotics">
+        <h3>Robotics and autonomy infrastructure</h3>
+        <p>For teams that move robots from the demo to the field.</p>
+        <ul class="ticks">
+          <li>Fleet telemetry and observability for ROS 2</li>
+          <li>CI/CD and simulation pipelines for ROS 2</li>
+          <li>Over-the-air updates with staged rollout and rollback</li>
+          <li>Edge-to-cloud pipelines for sensor data</li>
+          <li>High availability for safety-critical operations</li>
+        </ul>
+        <a class="text-link" href="{{ "services/#robotics" | relURL }}">Robotics services</a>
+      </article>
+      <article class="practice practice-cloud">
+        <h3>Cloud and platform engineering</h3>
+        <p>For software teams that need a platform that scales without drama.</p>
+        <ul class="ticks">
+          <li>Cloud architecture and migration on AWS, Azure, and GCP</li>
+          <li>Kubernetes and container platforms</li>
+          <li>CI/CD and infrastructure as code</li>
+          <li>Cloud cost reviews and right-sizing</li>
+          <li>Security, reliability, and infrastructure audits</li>
+        </ul>
+        <a class="text-link" href="{{ "services/#cloud" | relURL }}">Cloud services</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section section-tint">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Where robotics teams get stuck</h2>
+      <p>These problems come back in almost every robotics team I talk to. Each one has a known fix.</p>
+    </div>
+    <dl class="problems">
+      <div class="problem">
+        <dt>“It worked in simulation.”</dt>
+        <dd>A mission fails in the field and nobody can say why. I set up correlated telemetry, so you can replay what the robot did and the reason it did it.</dd>
+      </div>
+      <div class="problem">
+        <dt>Every release is a risk.</dt>
+        <dd>Updates go to robots by hand, one at a time. I build staged over-the-air rollouts with health checks and fast rollback.</dd>
+      </div>
+      <div class="problem">
+        <dt>Data grows faster than the fleet.</dt>
+        <dd>Bags and logs fill disks and buckets. I design what stays on the robot, what goes to the cloud, and what gets deleted.</dd>
+      </div>
+      <div class="problem">
+        <dt>The cloud bill is a surprise.</dt>
+        <dd>Spend grows with no clear owner. I review it line by line, remove the waste, and set guardrails so it stays down.</dd>
+      </div>
+    </dl>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap founder">
+    <div class="founder-copy">
+      <h2>You work with me directly</h2>
+      <p>I am Ashwin Thanalapati. I have spent more than 20 years building and running infrastructure, first in software and now in autonomous systems. There is no hand-off to a junior team. The person who scopes the work does the work.</p>
+      <a class="text-link" href="{{ "about/" | relURL }}">More about me</a>
+    </div>
+    <ul class="facts">
+      <li><strong>Autonomous mobility</strong> Lead Cloud Architect for an autonomous-vehicle orchestration platform, in pilot in the UAE.</li>
+      <li><strong>Robotics research</strong> Built infrastructure for autonomous robotics and drone swarms at Technology Innovation Institute, Abu Dhabi.</li>
+      <li><strong>Hands-on robotics</strong> MSc Robotics, Middlesex University London. I build and run ROS 2 robots myself.</li>
+      <li><strong>Product founder</strong> Founder of <a href="https://orthosrobotics.com" rel="noopener">Orthos Robotics</a>, which turns ROS 2 telemetry into OpenTelemetry traces.</li>
+      <li><strong>Reliability</strong> 100% uptime for more than 18 months as Director of Engineering at CoLearn.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="section section-tint">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>How an engagement works</h2>
+    </div>
+    <ol class="steps">
+      <li>
+        <h3>Call</h3>
+        <p>30 minutes, free. You describe the problem. I tell you honestly if I can help.</p>
+      </li>
+      <li>
+        <h3>Review</h3>
+        <p>I look at your systems, costs, and team setup. You get a short written summary.</p>
+      </li>
+      <li>
+        <h3>Proposal</h3>
+        <p>A fixed scope, a timeline, and a price. No open-ended hourly billing unless you want it.</p>
+      </li>
+      <li>
+        <h3>Delivery and handover</h3>
+        <p>I build it with your team, document it, and make sure your engineers can run it without me.</p>
+      </li>
+    </ol>
+    <p class="section-foot"><a class="text-link" href="{{ "services/#engagements" | relURL }}">Engagement formats</a></p>
+  </div>
+</section>
+
+{{ partial "cta.html" . }}
+{{ end }}

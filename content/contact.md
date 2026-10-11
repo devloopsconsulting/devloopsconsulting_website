@@ -1,32 +1,55 @@
 ---
-title: "Contact Us"
-description: "Get in touch for DevOps and cloud consulting."
-markup:
-  goldmark:
-    renderer:
-      unsafe: true
+title: "Contact"
+heading: "Book a free 30-minute call"
+lede: "Tell me what you are working on and where it hurts. I reply within one business day."
+description: "Contact DevLoops Consulting for DevOps, cloud, and robotics infrastructure work."
+raw: true
+hideCta: true
 ---
 
-
-Ready to modernize your infrastructure or migrate to the cloud? We'd love to discuss your project and how we can help.
-
-- Email: [contact@devloopsconsulting.com](mailto:contact@devloopsconsulting.com)
-
-## Send us a message
-
-Fill out the form below and our team will get back to you within one business day.
-
-<form action="https://formspree.io/f/xkgbgypy" method="POST" class="max-w-lg mx-auto p-4 bg-white rounded shadow">
-  <label for="name">Name:</label><br>
-  <input type="text" id="name" name="name" required class="w-full mb-2 p-2 border rounded"><br>
-
-  <label for="email">Email:</label><br>
-  <input type="email" id="email" name="email" required class="w-full mb-2 p-2 border rounded"><br>
-
-  <label for="message">Message:</label><br>
-  <textarea id="message" name="message" rows="5" required class="w-full mb-2 p-2 border rounded"></textarea><br>
-
-  <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded">Send Message</button>
-</form>
-
-<small class="block mt-4 text-gray-500">We respect your privacy. Your information will never be shared.</small>
+<div class="wrap">
+  <div class="contact-grid">
+    <div class="contact-info">
+      <p>The first call is free and has no obligation. At the end of it, you will know if I can help and what the next step is.</p>
+      <dl>
+        <dt>Email</dt>
+        <dd><a href="mailto:contact@devloopsconsulting.com">contact@devloopsconsulting.com</a></dd>
+        <dt>Location</dt>
+        <dd>Abu Dhabi, UAE. I work with teams in all time zones.</dd>
+        <dt>LinkedIn</dt>
+        <dd><a href="https://www.linkedin.com/in/ashwinmurali/" rel="noopener">Ashwin Thanalapati</a></dd>
+      </dl>
+    </div>
+    <form class="form" action="https://formspree.io/f/xkgbgypy" method="POST">
+      <div class="field">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" autocomplete="name" required>
+      </div>
+      <div class="field">
+        <label for="email">Work email</label>
+        <input type="email" id="email" name="email" autocomplete="email" required>
+      </div>
+      <div class="field">
+        <label for="company">Company</label>
+        <input type="text" id="company" name="company" autocomplete="organization">
+      </div>
+      <div class="field">
+        <label for="topic">What do you need help with?</label>
+        <select id="topic" name="topic">
+          <option>Robotics or autonomy infrastructure</option>
+          <option>Cloud architecture or migration</option>
+          <option>CI/CD and automation</option>
+          <option>Cloud cost review</option>
+          <option>Infrastructure audit</option>
+          <option>Something else</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+      </div>
+      <button type="submit" class="btn btn-accent">Send message</button>
+      <p class="hint">I use your details only to reply to you.</p>
+    </form>
+  </div>
+</div>

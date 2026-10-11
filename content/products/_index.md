@@ -1,12 +1,7 @@
 ---
-title: "Our Services"
-description: "Explore our DevOps and cloud services."
+title: "Services"
+# Old page, replaced by /services/. Not built.
+build:
+  render: never
+  list: never
 ---
-
-We offer tailored services for:
-- CI/CD automation
-- Cloud migration
-- Infrastructure modernization
-- Managed DevOps support
-
-Contact us to learn more about our offerings or request a case study.
