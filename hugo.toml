@@ -8,6 +8,11 @@ enableRobotsTXT = true
 disableKinds = ["taxonomy", "term", "RSS"]
 # The site uses its own templates in /layouts. The old "tella" theme is no longer used.
 
+[services]
+  [services.googleAnalytics]
+    # GA4 measurement ID (Admin > Data streams > Web). Empty = no tracking.
+    ID = "G-Y6E08XC2NV"
+
 [params]
   description = "DevOps and cloud infrastructure consulting for robotics, autonomy, and software teams. Senior-led, based in Abu Dhabi, working worldwide."
   email = "contact@devloopsconsulting.com"
