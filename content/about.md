@@ -10,17 +10,19 @@ raw: true
   <div class="about-grid">
     <div class="prose">
       <p>I started in mobile firmware and build engineering. Over the next two decades I moved through release management, DevOps, and engineering leadership at product companies in India and the UAE.</p>
-      <p>Today my work sits where cloud meets the physical world. I am Lead Cloud Architect for an autonomous-vehicle orchestration platform that is in pilot in the UAE. Before that, I built resilient infrastructure for autonomous robotics, drone swarms, and AI model deployment at Technology Innovation Institute in Abu Dhabi.</p>
+      <p>Today my work sits where cloud meets the physical world. I lead the cloud architecture for an autonomous-vehicle orchestration platform that is in pilot in the UAE. Before that, I built resilient infrastructure for autonomous robotics, drone swarms, and AI model deployment at Technology Innovation Institute in Abu Dhabi.</p>
       <p>I hold an MSc in Robotics from Middlesex University London, and I build ROS 2 robots myself. I am also the founder of <a href="https://orthosrobotics.com" rel="noopener">Orthos Robotics</a>, which turns ROS 2 telemetry into OpenTelemetry traces for mission verification.</p>
       <p>At DevLoops, you get direct access to that experience. You work with me, not with a sales team or a bench of juniors. I scope the work, I do the work, and I make sure your team can own it after I leave.</p>
+      <p>Most engagements start with a two-week <a href="/diagnostic/">Production Readiness Diagnostic</a>.</p>
     </div>
     <aside class="about-side">
       <h2>Focus areas</h2>
       <ul>
-        <li>Cloud architecture and DevOps</li>
         <li>Robotics and autonomy infrastructure</li>
+        <li>Cloud architecture and DevOps</li>
         <li>ROS 2 and OpenTelemetry</li>
         <li>Reliability and high availability</li>
+        <li>AI and GPU platforms</li>
         <li>Cloud cost optimisation</li>
         <li>Engineering leadership</li>
       </ul>

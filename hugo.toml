@@ -14,7 +14,9 @@ disableKinds = ["taxonomy", "term", "RSS"]
     ID = "G-Y6E08XC2NV"
 
 [params]
-  description = "DevOps and cloud infrastructure consulting for robotics, autonomy, and software teams. Senior-led, based in Abu Dhabi, working worldwide."
+  description = "Production infrastructure for robotics and physical AI teams. Fixed-scope, fixed-price work by a senior architect. Based in Abu Dhabi, working worldwide."
+  # Prices live in data/offers.yaml. Set to false to hide them on every page.
+  showPrices = true
   email = "contact@devloopsconsulting.com"
   location = "Abu Dhabi, UAE"
   linkedin = "https://www.linkedin.com/in/ashwinmurali/"
@@ -33,14 +35,14 @@ disableKinds = ["taxonomy", "term", "RSS"]
 [menu]
   [[menu.main]]
     identifier = "services"
-    name = "Services"
+    name = "Services and pricing"
     url = "/services/"
     weight = 1
 
   [[menu.main]]
-    identifier = "robotics"
-    name = "Robotics"
-    url = "/services/#robotics"
+    identifier = "diagnostic"
+    name = "Diagnostic"
+    url = "/diagnostic/"
     weight = 2
 
   [[menu.main]]

@@ -1,0 +1,27 @@
+{{- $o := site.Data.offers -}}
+<ol class="ladder">
+  <li class="rung rung-1">
+    <p class="rung-step">Step 1 · {{ $o.diagnostic.duration }}</p>
+    <h3>{{ $o.diagnostic.short }}</h3>
+    <p class="rung-name">{{ $o.diagnostic.name }}</p>
+    <p>{{ $o.diagnostic.summary }}</p>
+    <p class="rung-price">{{ partial "price.html" (dict "price" $o.diagnostic.price) }}</p>
+    <a class="text-link" href="{{ "diagnostic/" | relURL }}">What the diagnostic covers</a>
+  </li>
+  <li class="rung rung-2">
+    <p class="rung-step">Step 2 · 3 to 8 weeks</p>
+    <h3>Build</h3>
+    <p class="rung-name">Fixed-scope build sprints</p>
+    <p>One defined outcome per sprint. I build it in your accounts, with your team, and hand it over with runbooks.</p>
+    <p class="rung-price">{{ partial "price.html" (dict "price" $o.buildFrom "prefix" "From") }}</p>
+    <a class="text-link" href="{{ "services/#sprints" | relURL }}">See the sprints</a>
+  </li>
+  <li class="rung rung-3">
+    <p class="rung-step">Step 3 · Optional</p>
+    <h3>{{ $o.operate.short }}</h3>
+    <p class="rung-name">{{ $o.operate.name }}</p>
+    <p>{{ $o.operate.summary }}</p>
+    <p class="rung-price">{{ partial "price.html" (dict "price" $o.operate.priceFrom "prefix" "From" "suffix" $o.operate.priceSuffix) }}</p>
+    <a class="text-link" href="{{ "services/#operate" | relURL }}">How the monthly plan works</a>
+  </li>
+</ol>

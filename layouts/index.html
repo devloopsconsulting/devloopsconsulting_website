@@ -1,12 +1,14 @@
 {{ define "main" }}
+{{- $o := site.Data.offers -}}
 <section class="hero">
   <div class="wrap hero-grid">
     <div class="hero-copy">
-      <h1>Infrastructure that holds up, from the cloud to the robot.</h1>
-      <p class="lede">DevLoops is a boutique DevOps and cloud consultancy. I help robotics, autonomy, and software teams ship faster, run reliably, and spend less on cloud.</p>
+      <p class="eyebrow">For robotics and physical AI teams</p>
+      <h1>From demo to dependable fleet.</h1>
+      <p class="lede">Your engineers build the robots and the models. I build the platform under them: cloud, release pipelines, fleet telemetry and GPUs. Fixed scope. Fixed price. Your team owns all of it at the end.</p>
       <div class="hero-actions">
-        <a class="btn btn-accent" href="{{ "contact/#book" | relURL }}">Book a free 30-minute call</a>
-        <a class="btn btn-ghost" href="{{ "services/" | relURL }}">See services</a>
+        <a class="btn btn-accent" href="{{ "diagnostic/" | relURL }}">Start with a 2-week diagnostic</a>
+        <a class="btn btn-ghost" href="{{ "contact/#book" | relURL }}">Book a free call</a>
       </div>
     </div>
     <figure class="hero-loop" aria-label="The delivery loop: build and test, release, deploy to fleet, run on robot, telemetry back, analyse.">
@@ -34,35 +36,44 @@
 <section class="section">
   <div class="wrap">
     <div class="section-head">
-      <h2>Two practices. One engineering standard.</h2>
-      <p>Most consultants know the cloud or know robots. Robotics teams need both, because the robot and the backend fail together.</p>
+      <h2>Robotics teams lose months to infrastructure.</h2>
+      <p>The robot works in the lab. Then it goes to the field, and the platform under it is not ready. Most teams pick one of three options, and each one costs speed, money or control.</p>
     </div>
-    <div class="practices">
-      <article class="practice practice-robotics">
-        <h3>Robotics and autonomy infrastructure</h3>
-        <p>For teams that move robots from the demo to the field.</p>
-        <ul class="ticks">
-          <li>Fleet telemetry and observability for ROS 2</li>
-          <li>CI/CD and simulation pipelines for ROS 2</li>
-          <li>Over-the-air updates with staged rollout and rollback</li>
-          <li>Edge-to-cloud pipelines for sensor data</li>
-          <li>High availability for safety-critical operations</li>
-        </ul>
-        <a class="text-link" href="{{ "services/#robotics" | relURL }}">Robotics services</a>
-      </article>
-      <article class="practice practice-cloud">
-        <h3>Cloud and platform engineering</h3>
-        <p>For software teams that need a platform that scales without drama.</p>
-        <ul class="ticks">
-          <li>Cloud architecture and migration on AWS, Azure, and GCP</li>
-          <li>Kubernetes and container platforms</li>
-          <li>CI/CD and infrastructure as code</li>
-          <li>Cloud cost reviews and right-sizing</li>
-          <li>Security, reliability, and infrastructure audits</li>
-        </ul>
-        <a class="text-link" href="{{ "services/#cloud" | relURL }}">Cloud services</a>
-      </article>
+    <div class="options">
+      <div class="option">
+        <h3>Hire a platform team</h3>
+        <p>Senior platform hires take months to find. You pay full salaries before anything ships. One key hire becomes a single point of failure.</p>
+      </div>
+      <div class="option">
+        <h3>Let your engineers do it</h3>
+        <p>Your best robotics and ML people write YAML, not product. Systems break in front of customers. GPU bills arrive as a surprise.</p>
+      </div>
+      <div class="option">
+        <h3>Hire a big consultancy</h3>
+        <p>Slow to start and expensive. Seniors sell the work and juniors deliver it. Few of them know ROS 2, GPUs or robot fleets.</p>
+      </div>
     </div>
+  </div>
+</section>
+
+<section class="section section-tint" id="how">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>A senior platform engineer, in three fixed steps.</h2>
+      <p>Each step has a fixed scope and a fixed price, agreed before we start. You can stop after any step.</p>
+    </div>
+    {{ partial "offer/ladder.html" . }}
+  </div>
+</section>
+
+<section class="section" id="sprints">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Build sprints with one clear outcome</h2>
+      <p>The diagnostic tells us which sprint comes first. Each sprint ends with a working system in your accounts, documentation and a handover to your team.</p>
+    </div>
+    {{ partial "offer/sprints.html" false }}
+    <p class="section-foot"><a class="text-link" href="{{ "services/#sprints" | relURL }}">What each sprint includes</a></p>
   </div>
 </section>
 
@@ -86,7 +97,7 @@
         <dd>Bags and logs fill disks and buckets. I design what stays on the robot, what goes to the cloud, and what gets deleted.</dd>
       </div>
       <div class="problem">
-        <dt>The cloud bill is a surprise.</dt>
+        <dt>The GPU bill is a surprise.</dt>
         <dd>Spend grows with no clear owner. I review it line by line, remove the waste, and set guardrails so it stays down.</dd>
       </div>
     </dl>
@@ -101,8 +112,8 @@
       <a class="text-link" href="{{ "about/" | relURL }}">More about me</a>
     </div>
     <ul class="facts">
-      <li><strong>Autonomous mobility</strong> Lead Cloud Architect for an autonomous-vehicle orchestration platform, in pilot in the UAE.</li>
-      <li><strong>Robotics research</strong> Built infrastructure for autonomous robotics and drone swarms at Technology Innovation Institute, Abu Dhabi.</li>
+      <li><strong>Autonomy in production</strong> Cloud architecture for an autonomous-vehicle orchestration platform, in pilot in the UAE.</li>
+      <li><strong>Robots in the field</strong> Built infrastructure for autonomous robotics, drone swarms and AI model deployment at Technology Innovation Institute, Abu Dhabi.</li>
       <li><strong>Hands-on robotics</strong> MSc Robotics, Middlesex University London. I build and run ROS 2 robots myself.</li>
       <li><strong>Product founder</strong> Founder of <a href="https://orthosrobotics.com" rel="noopener">Orthos Robotics</a>, which turns ROS 2 telemetry into OpenTelemetry traces.</li>
       <li><strong>Reliability</strong> 100% uptime for more than 18 months as Director of Engineering at CoLearn.</li>
@@ -113,27 +124,11 @@
 <section class="section section-tint">
   <div class="wrap">
     <div class="section-head">
-      <h2>How an engagement works</h2>
+      <h2>Are we a good fit?</h2>
+      <p>I work with a small number of teams at a time. This is who I help best.</p>
     </div>
-    <ol class="steps">
-      <li>
-        <h3>Call</h3>
-        <p>30 minutes, free. You describe the problem. I tell you honestly if I can help.</p>
-      </li>
-      <li>
-        <h3>Review</h3>
-        <p>I look at your systems, costs, and team setup. You get a short written summary.</p>
-      </li>
-      <li>
-        <h3>Proposal</h3>
-        <p>A fixed scope, a timeline, and a price. No open-ended hourly billing unless you want it.</p>
-      </li>
-      <li>
-        <h3>Delivery and handover</h3>
-        <p>I build it with your team, document it, and make sure your engineers can run it without me.</p>
-      </li>
-    </ol>
-    <p class="section-foot"><a class="text-link" href="{{ "services/#engagements" | relURL }}">Engagement formats</a></p>
+    {{ partial "offer/fit.html" . }}
+    <p class="section-foot">Not a robotics team? The same diagnostic and sprints work for any team that runs AI or software on AWS, Azure or GCP. <a class="text-link" href="{{ "services/#cloud" | relURL }}">Cloud and platform work</a></p>
   </div>
 </section>
 

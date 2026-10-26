@@ -1,0 +1,6 @@
+{{- /* Usage: partial "price.html" (dict "price" "5,000" "prefix" "From" "suffix" "/ month") */ -}}
+{{- if site.Params.showPrices -}}
+<span class="price">{{ with .prefix }}<span class="price-pre">{{ . }}</span> {{ end }}{{ site.Data.offers.currency }} {{ .price }}{{ with .suffix }} <span class="price-suf">{{ . }}</span>{{ end }}</span>
+{{- else -}}
+<span class="price">Fixed price, quoted after the call</span>
+{{- end -}}

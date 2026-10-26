@@ -1,0 +1,16 @@
+{{- $detail := . -}}
+<div class="sprints">
+  {{- range site.Data.offers.sprints }}
+  <article class="sprint" id="{{ .id }}">
+    <p class="sprint-len">{{ .duration }}</p>
+    <h3>{{ .name }}</h3>
+    <p class="sprint-outcome">{{ .outcome }}</p>
+    {{- if $detail }}
+    <ul class="ticks">
+      {{- range .items }}<li>{{ . }}</li>{{ end }}
+    </ul>
+    {{- end }}
+    <p class="sprint-price">{{ partial "price.html" (dict "price" .price "prefix" "From") }}</p>
+  </article>
+  {{- end }}
+</div>

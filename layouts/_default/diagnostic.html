@@ -1,0 +1,99 @@
+{{ define "main" }}
+{{- $d := site.Data.offers.diagnostic -}}
+<section class="page-head diag-head">
+  <div class="wrap diag-grid">
+    <div>
+      <p class="eyebrow">{{ $d.name }}</p>
+      <h1>{{ .Params.heading | default .Title }}</h1>
+      {{ with .Params.lede }}<p class="lede">{{ . }}</p>{{ end }}
+      <div class="hero-actions">
+        <a class="btn btn-accent" href="{{ "contact/#book" | relURL }}">Book a call to start</a>
+      </div>
+    </div>
+    <aside class="diag-card">
+      <p class="diag-card-k">Duration</p>
+      <p class="diag-card-v">{{ $d.duration }}</p>
+      <p class="diag-card-k">Price</p>
+      <p class="diag-card-v">{{ partial "price.html" (dict "price" $d.price) }}</p>
+      <p class="diag-card-note">{{ $d.priceNote }}</p>
+    </aside>
+  </div>
+</section>
+<div class="page-body">
+<div class="wrap">
+
+<section class="svc">
+  <div class="svc-head">
+    <h2>What I review</h2>
+    <div><p>Four areas. I need read-only access and two or three short calls with your engineers.</p></div>
+  </div>
+  <div class="svc-items">
+    <div class="svc-item">
+      <h3>Cloud and architecture</h3>
+      <p>Accounts, networks, clusters, security and identity. Where the single points of failure are.</p>
+    </div>
+    <div class="svc-item">
+      <h3>Delivery pipeline</h3>
+      <p>How code gets from a commit to a robot or a customer. What is manual, what is tested, and what breaks.</p>
+    </div>
+    <div class="svc-item">
+      <h3>Fleet operations</h3>
+      <p>Telemetry, logs, over-the-air updates, and the data that flows between the robot and the cloud.</p>
+    </div>
+    <div class="svc-item">
+      <h3>Cost</h3>
+      <p>Cloud and GPU spend, line by line. Where the money goes, and how much of it you can save.</p>
+    </div>
+  </div>
+</section>
+
+<section class="svc">
+  <div class="svc-head">
+    <h2>What you get</h2>
+    <div><p>A plan you can act on with me, with another team, or on your own.</p></div>
+  </div>
+  <ul class="ticks ticks-cols">
+    {{- range $d.deliverables }}<li>{{ . }}</li>{{ end }}
+  </ul>
+</section>
+
+<section class="svc">
+  <div class="svc-head">
+    <h2>How the two weeks run</h2>
+  </div>
+  <ol class="timeline diag-timeline">
+    <li><span class="when">Day 1</span><span class="what"><strong>Kick-off</strong><span>A 60-minute call. We agree the goals, and you give me read-only access.</span></span></li>
+    <li><span class="when">Days 2 to 7</span><span class="what"><strong>Review</strong><span>I go through your systems, pipelines and bills. I talk with two or three of your engineers.</span></span></li>
+    <li><span class="when">Days 8 to 9</span><span class="what"><strong>Write-up</strong><span>Findings, ranked risks, savings and a 90-day roadmap, with a fixed price for each sprint.</span></span></li>
+    <li><span class="when">Day 10</span><span class="what"><strong>Readout</strong><span>A 60-minute session with your team. You keep the report and the recording.</span></span></li>
+  </ol>
+</section>
+
+<section class="svc">
+  <div class="svc-head">
+    <h2>Questions</h2>
+  </div>
+  <div class="faq">
+    <details>
+      <summary>Why not a free assessment?</summary>
+      <p>A free assessment gets a quick look and a sales pitch. A paid diagnostic gets ten days of focused work and a plan that is useful even if you never hire me. The full fee counts toward your first sprint if you start it within 30 days.</p>
+    </details>
+    <details>
+      <summary>Do you need write access to our systems?</summary>
+      <p>No. Read-only access is enough. I am happy to sign your NDA first.</p>
+    </details>
+    <details>
+      <summary>How much of my team's time does it take?</summary>
+      <p>About four hours in total: the kick-off, two or three short interviews, and the readout.</p>
+    </details>
+    <details>
+      <summary>What if we are not on AWS?</summary>
+      <p>I review AWS, Azure, GCP and on-premises systems, including GPU clusters.</p>
+    </details>
+  </div>
+</section>
+
+</div>
+</div>
+{{ partial "cta.html" . }}
+{{ end }}

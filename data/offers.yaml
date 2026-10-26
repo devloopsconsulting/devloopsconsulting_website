@@ -1,0 +1,92 @@
+# DevLoops offer ladder. One source of truth for the home page, the services page and the diagnostic page.
+# Change a price here and every page updates.
+# Set params.showPrices = false in hugo.toml to hide all prices and show "Fixed price, quoted after the call".
+
+currency: "USD"
+# Lowest sprint price, shown as "Build from" on the home page.
+buildFrom: "12,000"
+
+diagnostic:
+  name: "Production Readiness Diagnostic"
+  short: "Diagnose"
+  duration: "2 weeks"
+  price: "5,000"
+  priceNote: "Fixed price. Paid at the start. The full fee counts toward your first sprint if you start it within 30 days."
+  summary: "An independent review of your cloud, delivery pipeline, fleet operations and costs. You get a ranked plan to reach production."
+  deliverables:
+    - "Architecture and security review"
+    - "Cloud and GPU cost review, with a savings estimate"
+    - "Fleet operations review: telemetry, releases and data"
+    - "Reliability risks, ranked by impact"
+    - "A 90-day roadmap, with effort and a fixed price for each sprint"
+    - "A 60-minute readout with your team"
+
+sprints:
+  - id: "observability"
+    name: "Fleet Observability Sprint"
+    duration: "4 to 6 weeks"
+    price: "20,000"
+    outcome: "Find the cause of a field failure in minutes, not days."
+    items:
+      - "ROS 2 telemetry as OpenTelemetry traces, metrics and logs"
+      - "One trace per mission, from the robot to the cloud"
+      - "Dashboards and alerts your team uses every day"
+      - "Rules for what data stays on the robot and for how long"
+  - id: "release"
+    name: "Release Pipeline Sprint"
+    duration: "6 to 8 weeks"
+    price: "25,000"
+    outcome: "Ship to the fleet every week, with a fast way back."
+    items:
+      - "Reproducible ROS 2 builds and automated tests"
+      - "Simulation tests in the pipeline, before code reaches a robot"
+      - "Staged over-the-air rollout with health checks"
+      - "Automatic rollback when a release goes wrong"
+  - id: "ai-platform"
+    name: "AI Platform Sprint"
+    duration: "6 to 8 weeks"
+    price: "25,000"
+    outcome: "Train and serve models on a platform your team can run."
+    items:
+      - "Kubernetes and GPU platform, in the cloud or on-premises"
+      - "Model serving and private LLM endpoints"
+      - "Access control and audit trails for your data"
+      - "Cost guardrails per model and per team"
+  - id: "cost"
+    name: "Cloud and GPU Cost Sprint"
+    duration: "3 to 4 weeks"
+    price: "12,000"
+    outcome: "Cut cloud and GPU spend, and keep it down."
+    items:
+      - "Line-by-line review of spend"
+      - "Right-sizing, commitments and storage clean-up"
+      - "Budgets and alerts per team and per environment"
+      - "A monthly cost report your finance team can read"
+
+operate:
+  name: "Fractional Platform Lead"
+  short: "Operate"
+  duration: "Monthly"
+  # Lowest tier price, shown as "From" on the home page.
+  priceFrom: "6,000"
+  priceSuffix: "/ month"
+  summary: "Senior platform leadership without a full-time hire. Optional, after a sprint."
+  terms: "Both plans are paid monthly in advance. You can change the plan or stop with 30 days' notice."
+  tiers:
+    - name: "Platform Advisor"
+      days: "Up to 4 days each month"
+      price: "6,000"
+      for: "For teams with an engineer who owns the platform and needs senior review."
+      items:
+        - "Design reviews and mentoring for your engineers"
+        - "A monthly cost and reliability review"
+        - "Help to hire your first platform engineer"
+    - name: "Platform Lead"
+      days: "Up to 8 days each month"
+      price: "10,000 to 12,000"
+      for: "For teams with no platform owner. I own the platform and its roadmap."
+      items:
+        - "All of Platform Advisor"
+        - "Ownership of the platform roadmap"
+        - "Hands-on build and maintenance work"
+        - "Support when incidents occur, in business hours"

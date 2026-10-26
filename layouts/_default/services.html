@@ -1,0 +1,144 @@
+{{ define "main" }}
+{{- $o := site.Data.offers -}}
+<section class="page-head">
+  <div class="wrap">
+    <h1>{{ .Params.heading | default .Title }}</h1>
+    {{ with .Params.lede }}<p class="lede">{{ . }}</p>{{ end }}
+  </div>
+</section>
+<div class="page-body">
+<div class="wrap">
+
+<section class="svc" id="diagnostic">
+  <div class="svc-head">
+    <h2><span class="svc-num">1</span>{{ $o.diagnostic.name }}</h2>
+    <div>
+      <p>{{ $o.diagnostic.summary }} Every engagement starts here, so the first sprint solves the right problem.</p>
+      <p class="svc-meta"><span>{{ $o.diagnostic.duration }}</span> {{ partial "price.html" (dict "price" $o.diagnostic.price) }}</p>
+    </div>
+  </div>
+  <div class="svc-split">
+    <ul class="ticks">
+      {{- range $o.diagnostic.deliverables }}<li>{{ . }}</li>{{ end }}
+    </ul>
+    <div class="svc-note">
+      <p>{{ $o.diagnostic.priceNote }}</p>
+      <a class="btn btn-accent" href="{{ "diagnostic/" | relURL }}">How the two weeks run</a>
+    </div>
+  </div>
+</section>
+
+<section class="svc" id="sprints">
+  <div class="svc-head">
+    <h2><span class="svc-num">2</span>Build sprints</h2>
+    <div>
+      <p>One defined outcome per sprint, with a fixed scope and a fixed price. I build it in your accounts and repositories, with your team. Every sprint ends with documentation, runbooks and a recorded handover.</p>
+    </div>
+  </div>
+  {{ partial "offer/sprints.html" true }}
+  <p class="svc-foot">Need something that is not on this list? The diagnostic roadmap prices each sprint for your system before you commit.</p>
+</section>
+
+<section class="svc" id="operate">
+  <div class="svc-head">
+    <h2><span class="svc-num">3</span>{{ $o.operate.name }}</h2>
+    <div>
+      <p>{{ $o.operate.summary }} Your team keeps ownership. I keep the platform healthy and help your engineers grow into it.</p>
+    </div>
+  </div>
+  <div class="tiers">
+    {{- range $o.operate.tiers }}
+    <article class="tier">
+      <p class="sprint-len">{{ .days }}</p>
+      <h3>{{ .name }}</h3>
+      <p class="tier-for">{{ .for }}</p>
+      <ul class="ticks">
+        {{- range .items }}<li>{{ . }}</li>{{ end }}
+      </ul>
+      <p class="tier-price">{{ partial "price.html" (dict "price" .price "suffix" $o.operate.priceSuffix) }}</p>
+    </article>
+    {{- end }}
+  </div>
+  <p class="svc-foot">{{ $o.operate.terms }}</p>
+</section>
+
+<section class="svc" id="working">
+  <div class="svc-head">
+    <h2>How I run an engagement</h2>
+    <div>
+      <p>You always know what is done, what is next and what I need from you.</p>
+    </div>
+  </div>
+  <ol class="steps">
+    <li>
+      <h3>Statement of work</h3>
+      <p>Scope, deliverables, timeline and price on two pages. We both sign before work starts.</p>
+    </li>
+    <li>
+      <h3>Weekly update</h3>
+      <p>Every Friday, a written note: what is done, what is next, risks, and decisions I need from you.</p>
+    </li>
+    <li>
+      <h3>Your accounts, from day one</h3>
+      <p>All code, infrastructure and documents live in your repositories and cloud accounts. Nothing is locked to me.</p>
+    </li>
+    <li>
+      <h3>Handover</h3>
+      <p>A recorded walkthrough, runbooks, and two weeks of follow-up questions at no extra cost.</p>
+    </li>
+  </ol>
+</section>
+
+<section class="svc" id="cloud">
+  <div class="svc-head">
+    <h2>Cloud and platform work</h2>
+    <div>
+      <p>Not a robotics team? I ran production infrastructure for SaaS, mobility and AI companies for 20 years before robotics. The same diagnostic and fixed-price sprints apply to:</p>
+    </div>
+  </div>
+  <ul class="ticks ticks-cols">
+    <li>Cloud architecture and migration on AWS, Azure and GCP</li>
+    <li>Kubernetes and container platforms</li>
+    <li>CI/CD and infrastructure as code</li>
+    <li>Security, reliability and compliance audits</li>
+    <li>Cloud cost reviews and right-sizing</li>
+    <li>Modernisation of legacy systems</li>
+  </ul>
+</section>
+
+<section class="svc" id="faq">
+  <div class="svc-head">
+    <h2>Questions about terms</h2>
+  </div>
+  <div class="faq">
+    <details>
+      <summary>Why do you charge for the diagnostic?</summary>
+      <p>A free assessment gets a quick look. A paid one gets two weeks of focused work and a plan you can act on, with me or without me. The full fee counts toward your first sprint if you start it within 30 days.</p>
+    </details>
+    <details>
+      <summary>How do payments work?</summary>
+      <p>The diagnostic is paid at the start. Sprints are paid 50% at the start and 50% at handover. The monthly plan is paid in advance each month. I invoice in USD or AED.</p>
+    </details>
+    <details>
+      <summary>What if the scope changes during a sprint?</summary>
+      <p>We write the change down, agree a fixed price for it, and add it to the plan. There is no open-ended hourly billing.</p>
+    </details>
+    <details>
+      <summary>Who owns the work?</summary>
+      <p>You do. All code, configuration and documentation belong to you when you pay. I am happy to sign your NDA before we see any system.</p>
+    </details>
+    <details>
+      <summary>Do you work on-site?</summary>
+      <p>I work remotely with teams in all time zones. I can work on-site in the UAE, and travel for key milestones elsewhere.</p>
+    </details>
+    <details>
+      <summary>How many clients do you take at a time?</summary>
+      <p>A small number, so each team gets real attention. If I do not have capacity, I tell you the earliest start date on the first call.</p>
+    </details>
+  </div>
+</section>
+
+</div>
+</div>
+{{ partial "cta.html" . }}
+{{ end }}

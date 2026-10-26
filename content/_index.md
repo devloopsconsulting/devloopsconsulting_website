@@ -1,4 +1,4 @@
 ---
 title: "DevLoops Consulting"
-description: "Boutique, senior-led DevOps and cloud consultancy for robotics, autonomy, and software teams. Fleet observability, ROS 2 CI/CD, OTA, cloud architecture, Kubernetes, and cost optimisation."
+description: "Production infrastructure for robotics and physical AI teams. A two-week diagnostic, then fixed-price sprints for fleet observability, ROS 2 release pipelines, AI platforms and cloud cost."
 ---
